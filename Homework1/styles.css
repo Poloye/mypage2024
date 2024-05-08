@@ -1,0 +1,53 @@
+
+.table2 {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+   caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-weight: bold;
+  }
+   .thead2,
+  .tfoot2 {
+    background-color: rgb(228 240 245);
+  }
+   .th2,
+  .td2 {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+  }
+   .td2:last-of-type {
+    text-align: center;
+  }
+   .tbody2 > tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+  }
+   .tfoot2 th {
+    text-align: right;
+  }
+   .tfoot2 td {
+    font-weight: bold;
+  }
+
+  img {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+  }
+  /* hr {
+    border-top: 1px dashed red;
+  } */
+.hr1 {
+  border-top: 2px dotted red;
+}
+.hr2{
+    border: 0;   /* in order to override TWBS stylesheet */
+    height: 5px;
+  
+    background: -webkit-linear-gradient(left, rgb(240, 250, 219) 0%, rgb(109, 150, 20) 12.5%, rgb(216, 213, 17) 12.5%, rgb(244, 245, 212) 25%, rgb(247, 237, 221) 25%, rgb(240, 157, 25) 37.5%, rgb(231, 70, 49) 37.5%, rgb(247, 232, 230) 50%, rgb(245, 228, 236) 50%, rgb(241, 131, 177) 62.5%, rgb(150, 48, 233) 62.5%, rgb(238, 227, 247) 75%, rgb(213, 224, 235) 75%, rgb(27, 102, 199) 87.5%, rgb(223, 231, 245) 87.5%, rgb(40, 174, 226) 87.5%, rgb(227, 246, 253) 100%); /* Chrome10+,Safari5.1+ */
+}
