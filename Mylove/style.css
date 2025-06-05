@@ -31,7 +31,7 @@ button {
 
 .balloon {
   position: absolute;
-  max-width: 130px;
+  max-width: 110px;
   left: -40px;
   bottom: -40px;
 }
