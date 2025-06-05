@@ -1,0 +1,26 @@
+p {font-family: 'Noto Sans Thai', sans-serif;}
+h1{font-family: 'Itim', cursive; font-style: italic;}
+span {font-family: 'Satisfy';}
+
+button {
+  background: none;
+  text-decoration: inherit;
+  font-family: system-ui;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+.border-gradient {
+  border: 5px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+}
+.border-gradient-gold {
+  border-image-source: linear-gradient(45deg, #f6e5d1, #b69673, #f6e5d1);
+}
+.balloon {position: absolute; max-width: 200px; left:-40px; bottom:-40px}
+.happy {max-width: 200px; margin: auto;}
+#card {display: none;}
+
+input {color:white}
+body {overflow: hidden;}
