@@ -31,7 +31,7 @@ button {
 
 .balloon {
   position: absolute;
-  max-width: 200px;
+  max-width: 130px;
   left: -40px;
   bottom: -40px;
 }
@@ -55,10 +55,10 @@ body {
 
 .eye-img {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 200;
-  max-width: 150px; /* ป้องกันใหญ่เกินบนจอเล็ก */
+  bottom: 1px;
+  right: 1px;
+  width: 140;
+  max-width: 120px; /* ป้องกันใหญ่เกินบนจอเล็ก */
   height: auto;
 }
 /*# sourceMappingURL=style.css.map */
