@@ -31,9 +31,9 @@ button {
 
 .balloon {
   position: absolute;
-  width: 90;
-  max-width: 110px;
-  left: -40px;
+  width: 100;
+  max-width: 120px;
+  left: -10px;
   bottom: -40px;
 }
 
@@ -59,7 +59,7 @@ body {
   bottom: -1px;
   right: -8px;
   width: 120;
-  max-width: 120px; /* ป้องกันใหญ่เกินบนจอเล็ก */
+  max-width: 140px; /* ป้องกันใหญ่เกินบนจอเล็ก */
   height: auto;
 }
 /*# sourceMappingURL=style.css.map */
