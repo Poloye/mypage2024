@@ -53,4 +53,12 @@ body {
   overflow: hidden;
 }
 
+.eye-img {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 200;
+  max-width: 150px; /* ป้องกันใหญ่เกินบนจอเล็ก */
+  height: auto;
+}
 /*# sourceMappingURL=style.css.map */
