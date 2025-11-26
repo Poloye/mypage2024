@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My love</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+Thai:wght@300;400&family=Satisfy&display=swap" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body class="h-screen bg-green-50 flex items-center justify-center">    
+    <section id="pass">
+        <div class="bg-white text-center p-5 rounded-lg drop-shadow-xl">   
+        <p>ระบุอายุ:</p>
+        <!-- <input id="code" type="tel" class="bg-slate-300 p-2 text-center" placeholder="xx ปี" value=""></div> -->
+        <button></button>
+    </section>
+    <section id="card">
+        <div class="m-3 p-3 bg-white text-center rounded-lg drop-shadow-xl">  
+            <div class="border-gradient border-gradient-gold py-20 px-8">
+                <p class="text-lg text-gray-500">ssss <br> aaaa</p>
+                <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;">ddd <br> xxx</h1>
+                <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o</span></center></p>
+                <!-- <img src="eye.png" class="eye-img"> -->
+                <img src="whiterose.png" class="balloon">
+            </div>
+        </div>
+    </section>
+    <script src="anime-master/lib/anime.min.js"></script>
+    <script>
+    let code = document.querySelector('#code')
+    let pass = document.querySelector('#pass')
+    let card = document.querySelector('#card')
+    code.addEventListener('keyup', checkCode)
+    function checkCode(){
+        if(code.value == '24'){
+        // if(code.value == '111'){
+            document.title = "Happy Birthday !!";
+            
+             code.blur(); //Close keyboard
+              anime({
+                targets: '#pass',
+                translateY: -600,
+                duration: 750,
+                rotate: '-45deg',
+                easing: 'linear'
+            });
+            setTimeout(function(){pass.style.display = "none"}, 750)
+            setTimeout(function(){card.style.display = "flex"
+        anime({
+            targets: '#card',
+            translateY: 600,
+            duration: 750,
+            rotate: '45deg',
+            easing: 'linear',
+            direction: 'reverse'
+            });
+        }, 750)
+
+        anime({
+            targets: '.balloon',
+            translateY: 10,
+            loop: true,
+            direction: 'alternate',
+            // easing: 'linear'
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            duration: 2000
+        });
+
+        }
+    }
+    
+
+
+    </script>
+    
+</body>
+</html>
