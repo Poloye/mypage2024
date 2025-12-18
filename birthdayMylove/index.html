@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My love</title>
+    <title>My love11</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font -->
@@ -12,48 +12,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+Thai:wght@300;400&family=Satisfy&display=swap" rel="stylesheet">
     <!-- Style -->
     <link rel="stylesheet" href="style.css">
-        <style>
-            .balloon {
-                position: absolute;
-                width: 100;
-                max-width: 120px;
-                left: -10px;
-                bottom: -40px;
-                display: block;
-                margin: auto;
-                user-select: none;
-            }
-
-            /* ข้อความเริ่มต้น / ขณะกด */
-            .text-normal {
-                display: block;
-                text-align: center;
-            }
-
-            .text-active {
-                display: none;
-                text-align: center;
-            }
-
-            /* ตอนแตะค้างที่รูป */
-            .balloon:active ~ .text-normal {
-                display: none;
-            }
-
-            .balloon:active ~ .text-active {
-                display: block;
-            }
-
-            /* ข้อความอื่น ๆ ที่ต้องการให้ขึ้นพร้อมกัน */
-            .balloon:active ~ .hidden-text {
-                display: block;
-            }
-
-            .hidden-text {
-                display: none;
-                text-align: center;
-            }
-          </style>
+    <style>
+        .hidden-text {
+            display: none;
+        }
+        .text-active {
+            display: none;
+        }
+        </style>
 </head>
 <body class="h-screen bg-green-50 flex items-center justify-center">    
     <section id="pass">
@@ -69,12 +35,6 @@
                 <div class="hidden-text">
                     <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;"> "รัก" คนๆนี้มากนะ ❤️️ </h1>
                 </div>
-                <!-- <div class="touch-area">
-                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o. </span></center></p>
-                </div>
-                <div class="hidden-text">
-                    <center><span class="ml-1 text-3xl text-green-800">&nbsp;&nbsp;&nbsp;&nbsp;N G</span></center>
-                </div> -->
                 <p></p>
                 <div class="text-normal">
                     <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o. </span></center></p>
@@ -82,18 +42,44 @@
                 <div class="text-active">
                     <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o n g. </span></center></p>
                 </div>
-                <img src="aor.png" class="page-img">
+                <img src="aor.png" class="page-img" id="rose">>
                 <img src="whiterose.png" class="balloon">
             </div>
         </div>
     </section>
       
     <script>
-        function toggleText() {
-          const text = document.getElementById("myText");
-          text.style.display = text.style.display === "none" ? "block" : "none";
+        const rose = document.getElementById('rose');
+        const hiddenText = document.querySelector('.hidden-text');
+        const textNormal = document.querySelector('.text-normal');
+        const textActive = document.querySelector('.text-active');
+        
+        // ฟังก์ชันตอนแตะค้าง
+        function pressStart(e) {
+            e.preventDefault(); // กันมือถือเลือก/ลากรูป
+            hiddenText.style.display = 'block';
+            textNormal.style.display = 'none';
+            textActive.style.display = 'block';
         }
-    </script>
+        
+        // ฟังก์ชันตอนปล่อย
+        function pressEnd() {
+            hiddenText.style.display = 'none';
+            textActive.style.display = 'none';
+            textNormal.style.display = 'block';
+        }
+        
+        /* Mobile (Android / iOS) */
+        rose.addEventListener('touchstart', pressStart);
+        rose.addEventListener('touchend', pressEnd);
+        rose.addEventListener('touchcancel', pressEnd);
+        
+        /* Desktop เผื่อทดสอบ */
+        rose.addEventListener('mousedown', pressStart);
+        rose.addEventListener('mouseup', pressEnd);
+        rose.addEventListener('mouseleave', pressEnd);
+        </script>
+
     <script src="anime-master/lib/anime.min.js"></script>
     <script>
     let code = document.querySelector('#code')
