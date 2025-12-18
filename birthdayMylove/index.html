@@ -46,28 +46,28 @@
         const loveText = document.getElementById('loveText')
         const toText = document.getElementById('toText')
         
-        // ====== เมื่อแตะค้าง ======
-        function holdAction() {
+        let hideTimer = null
+        
+        function showSecret() {
+            // แสดงข้อความ
             loveText.classList.remove('opacity-0')
             toText.innerText = '        T o n g.'
+        
+            // ถ้ากดซ้ำ ให้เริ่มนับเวลาใหม่
+            if (hideTimer) {
+                clearTimeout(hideTimer)
+            }
+        
+            // ซ่อนหลัง 5 วินาที
+            hideTimer = setTimeout(() => {
+                loveText.classList.add('opacity-0')
+                toText.innerText = '        T o.'
+            }, 5000)
         }
         
-        // ====== เมื่อปล่อย ======
-        function releaseAction() {
-            loveText.classList.add('opacity-0')
-            toText.innerText = '        T o.'
-        }
-        
-        // ====== Touch (Android / Mobile) ======
-        rose.addEventListener('touchstart', holdAction)
-        rose.addEventListener('touchend', releaseAction)
-        rose.addEventListener('touchcancel', releaseAction)
-        
-        // ====== Mouse (เผื่อเปิดบน PC) ======
-        rose.addEventListener('mousedown', holdAction)
-        rose.addEventListener('mouseup', releaseAction)
-        rose.addEventListener('mouseleave', releaseAction)
-        </script>  
+        // รองรับทั้งมือถือและคอม
+        rose.addEventListener('click', showSecret)
+    </script> 
     <script src="anime-master/lib/anime.min.js"></script>
     <script>
     let code = document.querySelector('#code')
