@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My love6</title>
+    <title>My love7</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font -->
@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+Thai:wght@300;400&family=Satisfy&display=swap" rel="stylesheet">
     <!-- Style -->
     <link rel="stylesheet" href="style.css">
-        <style>
+        <!-- <style>
             .touch-area:active + .hidden-text + .hidden-text2 {
               display: block;
             }
@@ -22,7 +22,35 @@
             .hidden-text2 {
               display: none;
             }
-        </style>
+        </style> -->
+        <style>
+            .touch-area {
+              position: relative;
+              user-select: none;
+            }
+          
+            .text-normal,
+            .text-active {
+              display: block;
+            }
+          
+            /* ค่าเริ่มต้น */
+            .text-active {
+              display: none;
+            }
+          
+            /* ตอนแตะค้าง */
+            .touch-area:active .text-normal {
+              display: none;
+            }
+          
+            .touch-area:active .text-active {
+              display: block;
+            }
+            .hidden-text {
+              display: none;
+            }
+          </style>
 </head>
 <body class="h-screen bg-green-50 flex items-center justify-center">    
     <section id="pass">
@@ -35,7 +63,7 @@
         <div class="m-3 p-3 bg-white text-center rounded-lg drop-shadow-xl">  
             <div class="border-gradient border-gradient-gold py-20 px-8">
                 <p class="text-lg text-gray-500">Happy Birthday ครับคุณอุทัยศรี<br>มีโชคมีลาภ สมหวังในสิ่งที่ต้องการ<br> มีความสุขมากๆ มีรอยยิ้มและเสียงหัวเราะอย่างนี้ตลอดไปนะ </p>
-                <div class="hidden-text">
+                <!-- <div class="hidden-text">
                     <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;"> "รัก" คนๆนี้มากนะ ❤️️ </h1>
                 </div>
                 <div class="touch-area">
@@ -43,6 +71,15 @@
                 </div>
                 <div class="hidden-text">
                     <center><span class="ml-1 text-3xl text-green-800">&nbsp;&nbsp;&nbsp;&nbsp;N G</span></center>
+                </div> -->
+                
+                <div class="touch-area">
+                    <span class="text-normal">
+                        <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o. </span></center></p>
+                    </span>
+                    <span class="text-active">
+                        <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o n g. </span></center></p>
+                    </span>
                 </div>
                 <img src="aor.png" class="page-img">
                 <img src="whiterose.png" class="balloon">
