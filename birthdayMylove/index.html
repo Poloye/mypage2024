@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My love11</title>
+    <title>My love</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font -->
@@ -12,14 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+Thai:wght@300;400&family=Satisfy&display=swap" rel="stylesheet">
     <!-- Style -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        .hidden-text {
-            display: none;
-        }
-        .text-active {
-            display: none;
-        }
-        </style>
 </head>
 <body class="h-screen bg-green-50 flex items-center justify-center">    
     <section id="pass">
@@ -32,54 +24,47 @@
         <div class="m-3 p-3 bg-white text-center rounded-lg drop-shadow-xl">  
             <div class="border-gradient border-gradient-gold py-20 px-8">
                 <p class="text-lg text-gray-500">Happy Birthday ครับคุณอุทัยศรี<br>มีโชคมีลาภ สมหวังในสิ่งที่ต้องการ<br> มีความสุขมากๆ มีรอยยิ้มและเสียงหัวเราะอย่างนี้ตลอดไปนะ </p>
-                <div class="hidden-text">
-                    <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;"> "รัก" คนๆนี้มากนะ ❤️️ </h1>
-                </div>
+                <!-- <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;"> "รัก" คนๆนี้มากนะ ❤️️ </h1> -->
+                <p id="loveText" class="text-pink-500 text-xl mt-4 opacity-0 transition-opacity duration-300">
+                    "รัก" คนๆนี้มากนะ ❤️
+                </p>
                 <p></p>
-                <div class="text-normal">
-                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o. </span></center></p>
-                </div>
-                <div class="text-active">
-                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o n g. </span></center></p>
-                </div>
-                <img src="aor.png" class="page-img" id="rose">>
+                <!-- <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o. </span></center></p> -->
+                <span id="toText" class="ml-1 text-3xl text-green-800">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o.
+                </span>
+                <img src="aor.png" class="page-img" id="rose">
                 <img src="whiterose.png" class="balloon">
             </div>
         </div>
     </section>
-      
     <script>
-        const rose = document.getElementById('rose');
-        const hiddenText = document.querySelector('.hidden-text');
-        const textNormal = document.querySelector('.text-normal');
-        const textActive = document.querySelector('.text-active');
+        const rose = document.querySelector('.balloon')
+        const loveText = document.getElementById('loveText')
+        const toText = document.getElementById('toText')
         
-        // ฟังก์ชันตอนแตะค้าง
-        function pressStart(e) {
-            e.preventDefault(); // กันมือถือเลือก/ลากรูป
-            hiddenText.style.display = 'block';
-            textNormal.style.display = 'none';
-            textActive.style.display = 'block';
+        // ====== เมื่อแตะค้าง ======
+        function holdAction() {
+            loveText.classList.remove('opacity-0')
+            toText.innerText = '        T o n g.'
         }
         
-        // ฟังก์ชันตอนปล่อย
-        function pressEnd() {
-            hiddenText.style.display = 'none';
-            textActive.style.display = 'none';
-            textNormal.style.display = 'block';
+        // ====== เมื่อปล่อย ======
+        function releaseAction() {
+            loveText.classList.add('opacity-0')
+            toText.innerText = '        T o.'
         }
         
-        /* Mobile (Android / iOS) */
-        rose.addEventListener('touchstart', pressStart);
-        rose.addEventListener('touchend', pressEnd);
-        rose.addEventListener('touchcancel', pressEnd);
+        // ====== Touch (Android / Mobile) ======
+        rose.addEventListener('touchstart', holdAction)
+        rose.addEventListener('touchend', releaseAction)
+        rose.addEventListener('touchcancel', releaseAction)
         
-        /* Desktop เผื่อทดสอบ */
-        rose.addEventListener('mousedown', pressStart);
-        rose.addEventListener('mouseup', pressEnd);
-        rose.addEventListener('mouseleave', pressEnd);
-        </script>
-
+        // ====== Mouse (เผื่อเปิดบน PC) ======
+        rose.addEventListener('mousedown', holdAction)
+        rose.addEventListener('mouseup', releaseAction)
+        rose.addEventListener('mouseleave', releaseAction)
+        </script>  
     <script src="anime-master/lib/anime.min.js"></script>
     <script>
     let code = document.querySelector('#code')
