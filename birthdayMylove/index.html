@@ -23,13 +23,13 @@
     <section id="card">
         <div class="m-3 p-3 bg-white text-center rounded-lg drop-shadow-xl">  
             <div class="border-gradient border-gradient-gold py-20 px-8">
-                <p class="text-lg text-gray-500">Happy Birthday ครับคุณอุทัยศรี<br>มีโชคมีลาภ สมหวังในสิ่งที่ต้องการ<br> มีความสุขมากๆ มีรอยยิ้มและเสียงหัวเราะอย่างนี้ตลอดไปนะ </p>
+                <p class="text-lg text-gray-500"><b>Happy Birthday</b> ครับคุณอุทัยศรี<br>มีโชคมีลาภ สมหวังในสิ่งที่ต้องการ<br> มีความสุขมากๆ มีรอยยิ้มและเสียงหัวเราะอย่างนี้ตลอดไปนะ </p>
                 <!-- <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;"> "รัก" คนๆนี้มากนะ ❤️️ </h1> -->
                 <p id="loveText" class="text-pink-500 text-xl mt-4 opacity-0 transition-opacity duration-300">
                     "รัก" คนๆนี้มากนะ ❤️
                 </p>
                 <p></p>
-                <!-- <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o. </span></center></p> -->
+                <!-- <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o. </span></center></p> -->
                 <span id="toText" class="ml-1 text-3xl text-green-800">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o.
                 </span>
@@ -46,13 +46,13 @@
         // ====== เมื่อแตะค้าง ======
         function holdAction() {
             loveText.classList.remove('opacity-0')
-            toText.innerText = '        T o n g.'
+            toText.innerText = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o n g.'
         }
         
         // ====== เมื่อปล่อย ======
         function releaseAction() {
             loveText.classList.add('opacity-0')
-            toText.innerText = '        T o.'
+            toText.innerText = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o.'
         }
         
         // ====== Touch (Android / Mobile) ======
