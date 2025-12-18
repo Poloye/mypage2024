@@ -13,26 +13,54 @@
     <!-- Style -->
     <link rel="stylesheet" href="style.css">
 
-    
+    <style>
+        .touch-area {
+          width: 200px;
+          height: 100px;
+          background: #e0e0e0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+      
+        .hidden-text {
+          display: none;
+          margin-top: 10px;
+          color: #333;
+        }
+      </style>
 </head>
 <body class="h-screen bg-green-50 flex items-center justify-center">    
     <section id="pass">
         <div class="bg-white text-center p-5 rounded-lg drop-shadow-xl">   
-        <p>เธอหลับ</p>
-        <!-- <input id="code" type="tel" class="bg-slate-300 p-2 text-center" placeholder="xx ปี" value=""></div> -->
+        <p>กรอกวันและเดือนเกิด ของผู้ส่ง QR</p>
+        <input id="code" type="tel" class="bg-slate-300 p-2 text-center" placeholder="DDMM" value=""></div>
         <button></button>
     </section>
     <section id="card">
         <div class="m-3 p-3 bg-white text-center rounded-lg drop-shadow-xl">  
             <div class="border-gradient border-gradient-gold py-20 px-8">
-                <p class="text-lg text-gray-500">ssss <br> aaaa</p>
-                <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;">ddd <br> xxx</h1>
-                <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o</span></center></p>
+                <p class="text-lg text-gray-500">Happy Birthday ครับคุณอุทัยศรี<br>มีโชคมีลาภ ได้รับในสิ่งที่คาดหวังทุกประการ</p>
+                <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;">มีความสุขมากๆ มีรอยยิ้มและเสียงหัวเราะ<br> </h1>
+                <div class="touch-area" onclick="toggleText()">
+                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T   o</span></center></p>
+                </div>
+                <div id="myText" class="hidden-text">
+                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">  N    G </span></center></p>
+                </div>
                 <!-- <img src="eye.png" class="eye-img"> -->
                 <img src="whiterose.png" class="balloon">
             </div>
         </div>
     </section>
+      
+    <script>
+        function toggleText() {
+          const text = document.getElementById("myText");
+          text.style.display = text.style.display === "none" ? "block" : "none";
+        }
+    </script>
     <script src="anime-master/lib/anime.min.js"></script>
     <script>
     let code = document.querySelector('#code')
@@ -40,7 +68,7 @@
     let card = document.querySelector('#card')
     code.addEventListener('keyup', checkCode)
     function checkCode(){
-        if(code.value == '24'){
+        if(code.value == '1810'){
         // if(code.value == '111'){
             document.title = "Happy Birthday !!";
             
