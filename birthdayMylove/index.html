@@ -30,8 +30,13 @@
                 </p>
                 <p></p>
                 <!-- <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o. </span></center></p> -->
-                <span id="toText" class="ml-1 text-3xl text-green-800">
+                <!-- <span id="toText" class="ml-1 text-3xl text-green-800">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o.
+                </span> -->
+                <span id="toText"
+                    class="ml-1 text-3xl text-green-800"
+                    style="white-space: pre;">
+                        T o.
                 </span>
                 <img src="aor.png" class="page-img" id="rose">
                 <img src="whiterose.png" class="balloon">
@@ -46,13 +51,13 @@
         // ====== เมื่อแตะค้าง ======
         function holdAction() {
             loveText.classList.remove('opacity-0')
-            toText.innerText = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o n g.'
+            toText.innerText = '        T o n g.'
         }
         
         // ====== เมื่อปล่อย ======
         function releaseAction() {
             loveText.classList.add('opacity-0')
-            toText.innerText = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o.'
+            toText.innerText = '        T o.'
         }
         
         // ====== Touch (Android / Mobile) ======
