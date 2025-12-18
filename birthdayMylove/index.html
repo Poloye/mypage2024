@@ -13,11 +13,10 @@
     <!-- Style -->
     <link rel="stylesheet" href="style.css">
 
-    <style>
+    <!-- <style>
         .touch-area {
-          width: 200px;
+          width: 100px;
           height: 100px;
-          background: #e0e0e0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -29,7 +28,15 @@
           margin-top: 10px;
           color: #333;
         }
-      </style>
+      </style> -->
+        <style>
+            .touch-area:active + .hidden-text {
+              display: block;
+            }
+            .hidden-text {
+              display: none;
+            }
+          </style>
 </head>
 <body class="h-screen bg-green-50 flex items-center justify-center">    
     <section id="pass">
@@ -41,15 +48,21 @@
     <section id="card">
         <div class="m-3 p-3 bg-white text-center rounded-lg drop-shadow-xl">  
             <div class="border-gradient border-gradient-gold py-20 px-8">
-                <p class="text-lg text-gray-500">Happy Birthday ครับคุณอุทัยศรี<br>มีโชคมีลาภ ได้รับในสิ่งที่คาดหวังทุกประการ</p>
-                <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;">มีความสุขมากๆ มีรอยยิ้มและเสียงหัวเราะ<br> </h1>
+                <p class="text-lg text-gray-500">Happy Birthday ครับคุณอุทัยศรี<br>มีโชคมีลาภ ได้รับในสิ่งที่คาดหวังทุกประการ<br> มีความสุขมากๆ มีรอยยิ้มและเสียงหัวเราะอยู่ตลอดไป</p>
+                <h1 class="text-2xl my-12 text-pink-500" style="font-size: 1.35em;"> "รัก" คนๆนี้มากนะ</h1>
                 <div class="touch-area" onclick="toggleText()">
-                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T   o</span></center></p>
+                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o. </span></center></p>
                 </div>
                 <div id="myText" class="hidden-text">
                     <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">  N    G </span></center></p>
                 </div>
-                <!-- <img src="eye.png" class="eye-img"> -->
+                <div class="touch-area">
+                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">T o. </span></center></p>
+                </div>
+                <div class="hidden-text">
+                    <p class="text-end text-xs mt-3"><center><span class="ml-1 text-3xl text-green-800">  N    G </span></center></p>
+                </div>
+                <img src="aor.png" class="aor-img">
                 <img src="whiterose.png" class="balloon">
             </div>
         </div>
