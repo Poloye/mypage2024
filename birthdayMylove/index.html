@@ -32,10 +32,7 @@
                 <!-- <span id="toText" class="ml-1 text-3xl text-green-800">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T o.
                 </span> -->
-                <span id="toText"
-                    class="ml-1 text-3xl text-green-800"
-                    style="white-space: pre;">        T o.
-                </span>
+                <span id="toText" class="ml-1 text-3xl text-green-800" style="white-space: pre;">        T o.</span>
                 <img src="aor.png" class="page-img" id="rose">
                 <img src="whiterose.png" class="balloon">
             </div>
@@ -77,11 +74,6 @@
     function checkCode(){
         if(code.value == '1810'){
         // if(code.value == '111'){
-            fetch('update_count.php')
-            .then(res => res.text())
-            .then(data => {
-                console.log('Count =', data)
-            })
             document.title = "Happy Birthday !!";
             
              code.blur(); //Close keyboard
