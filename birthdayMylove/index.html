@@ -77,6 +77,11 @@
     function checkCode(){
         if(code.value == '1810'){
         // if(code.value == '111'){
+            fetch('update_count.php')
+            .then(res => res.text())
+            .then(data => {
+                console.log('Count =', data)
+            })
             document.title = "Happy Birthday !!";
             
              code.blur(); //Close keyboard
